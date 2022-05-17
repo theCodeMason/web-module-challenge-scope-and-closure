@@ -165,8 +165,19 @@ function scoreboard(getInningScore, inning, inningNum) {
   let home = 0;
 
   for (let i = 0; i < inningNum; i++){
-      //let inning = `Inning ${i += 1}: Away ${
+      let this_inning = getInningScore();
+      away += this_inning["Away"];
+      home += this_inning["Home"];
+      let inningString = `Inning ${i}: Away ${away} - Home ${home}`;
+      answer.push(inningString);
   }
+  if (away == home){
+      let response = `This game will require extra innings: Away ${away} - Home ${home}`;
+ } else {
+      let response = `Final Score: Away ${away} - Home ${home}`;
+  }
+  answer.push(response);
+  return answer;
 }
 
 
