@@ -30,11 +30,12 @@ console.log('example task:', processFirstItem(['foo','bar'],function(str){return
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
-  
+  A. Counter 1 is a higher order function.
   2. Which of the two uses a closure? How can you tell?
-  
+  A. I think Counter2 uses a closure.
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+  A. It's better in OO programming.
 */
 
 // counter1 code
@@ -64,8 +65,8 @@ Use the inning function below to do the following:
 NOTE: This will be a callback function for the tasks below
 */
 
-function inning(/*Code Here*/){
-    /*Code Here*/
+function inning(){
+    return Math.floor(Math.random() * (2 - 0 + 1)) + 0;
 }
 
 
@@ -83,8 +84,15 @@ Use the finalScore function below to do the following:
 }
 */ 
 
-function finalScore(/*Code Here*/){
-  /*Code Here*/
+function finalScore(inning, inningNum){
+  const finalScore = {"Home": 0,
+                      "Away": 0
+                     }
+  for (let i=0; i < inningNum; i++){
+     finalScore["Home"] += inning();
+     finalScore["Away"] += inning();
+  }
+  return finalScore;
 }
 
 
@@ -101,9 +109,13 @@ For example: invoking getInningScore(inning) might return this object:
   */
 
 
-function getInningScore(/*Your Code Here */) {
-  /*Your Code Here */
-
+function getInningScore(inning) {
+  const inningScore = {"Home": 0,
+                       "Away": 0
+                      }
+  inningScore["Home"] += inning();
+  inningScore["Away"] += inning();
+  return inningScore;
 }
 
 
@@ -147,8 +159,14 @@ Use the scoreboard function below to do the following:
   "This game will require extra innings: Away 10 - Home 10"
 ] */
 // NOTE: There is no test associated with this code; if your output matches the given example, consider it complete!
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(getInningScore, inning, inningNum) {
+  let answer = [];
+  let away = 0;
+  let home = 0;
+
+  for (let i = 0; i < inningNum; i++){
+      //let inning = `Inning ${i += 1}: Away ${
+  }
 }
 
 
